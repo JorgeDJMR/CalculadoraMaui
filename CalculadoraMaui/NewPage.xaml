@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculadoraMaui.NewPage"
+             Title="NewPage"
+             BackgroundColor="#404646">
+    <ContentPage.Resources>
+        <Style x:Key="CalculatorButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#F0F0F0" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontFamily">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="HelveticaNeue-Medium" />
+                        <On Platform="Android" Value="Droid Sans Mono" />
+                        <On Platform="UWP" Value="Assets/Fonts/Calculator.ttf#Calculator" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="WidthRequest" Value="58" />
+            <Setter Property="HeightRequest" Value="58" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Opacity" Value="0.6" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <Label x:Name="resultLabel" FontSize="50" FontFamily="Segoe UI" HorizontalTextAlignment="End" Text="0" />
+            <Grid Margin="10" RowSpacing="5" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnClear" Style="{StaticResource CalculatorButtonStyle}" Text="C" Grid.Row="0" Grid.Column="0" Clicked="btn1_Clicked" />
+                <Button x:Name="btnDelete" Style="{StaticResource CalculatorButtonStyle}" Text="Del" Grid.Row="0" Grid.Column="1" Clicked="btn1_Clicked"/>
+                <Button x:Name="btnModulus" Style="{StaticResource CalculatorButtonStyle}" Text="%" Grid.Row="0" Grid.Column="2" />
+                <Button x:Name="btnDivide" Style="{StaticResource CalculatorButtonStyle}" Text="/" Grid.Row="0" Grid.Column="3" Clicked="btn1_Clicked" />
+                <Button x:Name="btn7" Style="{StaticResource CalculatorButtonStyle}" Text="7" Grid.Row="1" Grid.Column="0" Clicked="btn1_Clicked" />
+                <Button x:Name="btn8" Style="{StaticResource CalculatorButtonStyle}" Text="8" Grid.Row="1" Grid.Column="1" Clicked="btn1_Clicked"/>
+                <Button x:Name="btn9" Style="{StaticResource CalculatorButtonStyle}" Text="9" Grid.Row="1" Grid.Column="2" Clicked="btn1_Clicked" />
+                <Button x:Name="btnMultiply" Style="{StaticResource CalculatorButtonStyle}" Text="×" Grid.Row="1" Grid.Column="3" Clicked="btn1_Clicked" />
+                <Button x:Name="btn4" Style="{StaticResource CalculatorButtonStyle}" Text="4" Grid.Row="2" Grid.Column="0" Clicked="btn1_Clicked"/>
+                <Button x:Name="btn5" Style="{StaticResource CalculatorButtonStyle}" Text="5" Grid.Row="2" Grid.Column="1" Clicked="btn1_Clicked" />
+                <Button x:Name="btn6" Style="{StaticResource CalculatorButtonStyle}" Text="6" Grid.Row="2" Grid.Column="2" Clicked="btn1_Clicked" />
+                <Button x:Name="btnSubtract" Style="{StaticResource CalculatorButtonStyle}" Text="-" Grid.Row="2" Grid.Column="3" Clicked="btn1_Clicked" />
+                <Button x:Name="btn1" Style="{StaticResource CalculatorButtonStyle}" Text="1" Grid.Row="3" Grid.Column="0" Clicked="btn1_Clicked" />
+                <Button x:Name="btn2" Style="{StaticResource CalculatorButtonStyle}" Text="2" Grid.Row="3" Grid.Column="1" Clicked="btn1_Clicked"/>
+                <Button x:Name="btn3" Style="{StaticResource CalculatorButtonStyle}" Text="3" Grid.Row="3" Grid.Column="2" Clicked="btn1_Clicked" />
+                <Button x:Name="btnAdd" Style="{StaticResource CalculatorButtonStyle}" Text="+" Grid.Row="3" Grid.Column="3" Clicked="btn1_Clicked" />
+                <Button x:Name="btn0" Style="{StaticResource CalculatorButtonStyle}" Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Clicked="btn1_Clicked"/>
+                <Button x:Name="btnDecimal" Style="{StaticResource CalculatorButtonStyle}" Text="." Grid.Row="4" Grid.Column="2" Clicked="btn1_Clicked" />
+                <Button x:Name="btnEquals" Style="{StaticResource CalculatorButtonStyle}" Text="=" Grid.Row="4" Grid.Column="3" Clicked="btn1_Clicked" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
